@@ -1,0 +1,119 @@
+<h4 class="mt-3">Alumnos</h4>
+<div class="row">
+	<div class="col-4">
+		<button class="btn btn-primary mt-3" data-toggle="modal"
+			data-target="#Alumnocreate">Nuevo</button>
+	</div>
+</div>
+<br>
+
+
+<table class="table table-striped">
+	<thead>
+		<tr>
+			<th scope="col">Matricula</th>
+			<th scope="col">Nombre</th>
+			<th scope="col">Apellido</th>
+			<th scope="col">edad</th>
+			<th scope="col">Sexo</th>
+			<th scope="col">Salon</th>
+			<th scope="col"></th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr ng-repeat="student in listStudent">
+       		<th>{{student.idalumno}}</th>
+			<th>{{student.name}}</th>
+			<th>{{student.lastname}}</th>
+			<th>{{student.ege}}</th>
+			<th>{{student.sex}}</th>
+			<th>{{student.salon.roomnumber}}</th>
+			<th>
+			<button class="btn btn-info" data-toggle="modal"
+			data-target="#Alumnoedit" ng-click="addEdit(student)"><i class="fas fa-edit"></i></button>
+			<button class="btn btn-danger" ng-click="delete(student.idalumno)"><i class="fas fa-trash-alt"></i></button>
+			</th>
+      </tr>
+	</tbody>
+</table>
+
+
+<div class="modal fade" id="Alumnocreate" tabindex="-1" role="dialog"
+	aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="Alumnocreate">Crear Alumno</h5>
+				<button type="button" class="close" data-dismiss="modal"
+					aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			<div class="modal-body">
+				<form>
+					<div class="from-group">
+						<label>Nombre</label> <input type="text" class="form-control"
+							ng-model="student.name" placeholder="Nombre" maxlength="30">
+						<label>Apellido</label> <input type="text" class="form-control"
+							ng-model="student.lastname" placeholder="Apellido" maxlength="30">
+						<label>edad</label> <input type="text" class="form-control"
+							ng-model="student.ege" placeholder="edad" maxlength="2">
+						<label>Sexo</label> <select class="form-control"
+							ng-model="student.sex">
+							<option value="Masculino">Masculino</option>
+							<option value="Femenino">Femenino</option>
+						</select>
+						<label>Salon</label> <select class="form-control"
+							ng-model="salon.salon">
+							<option ng-repeat="room in listRoom" ng-click="addRoom(room)">{{room.roomnumber}}</option>
+						</select>
+					</div>
+				</form>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-primary" ng-click="register()">Registrar</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+<div class="modal fade" id="Alumnoedit" tabindex="-1" role="dialog"
+	aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="Alumnoedit">Editar Alumno</h5>
+				<button type="button" class="close" data-dismiss="modal"
+					aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			<div class="modal-body">
+				<form>
+					<div class="from-group">
+						<label>Nombre</label> <input type="text" class="form-control"
+							ng-model="student.name" placeholder="Nombre" maxlength="30">
+						<label>Apellido</label> <input type="text" class="form-control"
+							ng-model="student.lastname" placeholder="Nombre" maxlength="30">
+						<label>edad</label> <input type="text" class="form-control"
+							ng-model="student.ege" placeholder="Nombre" maxlength="2">
+						<label>Sexo</label> <select class="form-control"
+							ng-model="student.sex">
+							<option value="Masculino">Masculino</option>
+							<option value="Femenino">Femenino</option>
+						</select>
+						<label>Salon</label> <select class="form-control"
+							ng-model="salon.salon">
+							<option ng-repeat="room in listRoom" ng-click="addRoom(room)">{{room.roomnumber}}</option>
+						</select>
+					</div>
+				</form>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-primary" ng-click="upStudent()">Editar</button>
+			</div>
+		</div>
+	</div>
+</div>

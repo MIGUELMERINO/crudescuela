@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html ng-app='alumno'>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Crud Alumnos</title>
+<link rel="stylesheet"
+	href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.0/angular.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/angular-route/1.8.0/angular-route.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script
+	src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+<script
+	src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script type="text/javascript" th:src="@{/js/config/appconfig.js}"></script>
+<script type="text/javascript" th:src="@{/js/controller/controller.js}"></script>
+<script type="text/javascript" th:src="@{/js/services/services.js}"></script>
+<script type="text/javascript" th:src="@{/js/crud/crud.js}"></script>
+</head>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+	<button class="navbar-toggler" type="button" data-toggle="collapse"
+		data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03"
+		aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+	<a class="navbar-brand" href="#!/">Alumno</a>
+
+	<div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+		<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+			<li class="nav-item"><a class="nav-link" href="#!/salon">Salon</a></li>
+		</ul>
+	</div>
+</nav>
+
+
+<body>
+	<div class="container-fluid" ng-view></div>
+</body>
+
+
+</html>
+
